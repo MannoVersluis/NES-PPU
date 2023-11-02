@@ -67,7 +67,7 @@ impl Ppu {
             1 => Mirroring::SingleScreenUpper,
             2 => Mirroring::Vertical,
             3 => Mirroring::Horizontal,
-        }
+        };
     }
 
     pub fn new(mirroring: Mirroring) -> Self {
