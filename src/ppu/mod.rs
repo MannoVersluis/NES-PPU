@@ -61,14 +61,13 @@ impl Ppu {
     /// for the lifetime of the emulator. Some real-world memory mappers could howerver
     /// change this in the middle of running a game. This is currently *not* supported
     /// by the emulator.
-    pub fn write_mirror(&mut self, mirroring: u8) -> Self {
+    pub fn write_mirror(&mut self, mirroring: u8) {
         self.mirroring = match mirroring & 0x3 {
             0 => Mirroring::SingleScreenLower,
             1 => Mirroring::SingleScreenUpper,
             2 => Mirroring::Vertical,
             3 => Mirroring::Horizontal,
         }
-        self.mirroring
     }
 
     pub fn new(mirroring: Mirroring) -> Self {
