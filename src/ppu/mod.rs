@@ -67,6 +67,7 @@ impl Ppu {
             1 => Mirroring::SingleScreenUpper,
             2 => Mirroring::Vertical,
             3 => Mirroring::Horizontal,
+            _ => todo!(), // Impossible to reach due to mirroring & 0x3 being 0, 1, 2, or 3
         };
     }
 
